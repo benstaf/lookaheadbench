@@ -14,7 +14,7 @@ import { ModelLogo } from './ModelLogo';
 import { TypeBadge } from './TypeBadge';
 import { AlphaDecayCell } from './AlphaDecayCell';
 
-type SortField = 'name' | 'type' | 'p1Alpha' | 'p2Alpha' | 'alphaDecay';
+type SortField = 'name' | 'type' | 'provider' | 'p1Alpha' | 'p2Alpha' | 'alphaDecay';
 type SortDirection = 'asc' | 'desc';
 
 interface SortConfig {
@@ -37,7 +37,6 @@ export const LeaderboardTable = () => {
     field: 'alphaDecay',
     direction: 'desc',
   });
-  const [filter, setFilter] = useState<'all' | 'ai' | 'quant'>('all');
 
   const handleSort = (field: SortField) => {
     setSortConfig(prev => ({
@@ -47,15 +46,7 @@ export const LeaderboardTable = () => {
   };
 
   const sortedData = useMemo(() => {
-    let filtered = leaderboardData;
-    
-    if (filter === 'ai') {
-      filtered = leaderboardData.filter(e => e.type !== 'quant');
-    } else if (filter === 'quant') {
-      filtered = leaderboardData.filter(e => e.type === 'quant');
-    }
-
-    return [...filtered].sort((a, b) => {
+    return [...leaderboardData].sort((a, b) => {
       const multiplier = sortConfig.direction === 'desc' ? -1 : 1;
       
       if (sortConfig.field === 'name') {
@@ -64,9 +55,12 @@ export const LeaderboardTable = () => {
       if (sortConfig.field === 'type') {
         return multiplier * a.type.localeCompare(b.type);
       }
+      if (sortConfig.field === 'provider') {
+        return multiplier * a.provider.localeCompare(b.provider);
+      }
       return multiplier * (a[sortConfig.field] - b[sortConfig.field]);
     });
-  }, [sortConfig, filter]);
+  }, [sortConfig]);
 
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortConfig.field !== field) {
@@ -101,30 +95,14 @@ export const LeaderboardTable = () => {
 
   return (
     <div className="space-y-4">
-      {/* Filters */}
-      <div className="flex gap-2">
-        {(['all', 'ai', 'quant'] as const).map(f => (
-          <button
-            key={f}
-            onClick={() => setFilter(f)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              filter === f 
-                ? 'bg-primary text-primary-foreground' 
-                : 'bg-secondary text-secondary-foreground hover:bg-muted'
-            }`}
-          >
-            {f === 'all' ? 'All' : f === 'ai' ? 'AI Models' : 'Quant Strategies'}
-          </button>
-        ))}
-      </div>
-
       {/* Table */}
       <div className="rounded-lg border border-border overflow-hidden glow-ring">
         <Table>
           <TableHeader>
             <TableRow className="border-b border-border">
               <TableHead className="w-16 table-header">Rank</TableHead>
-              <SortableHeader field="name">Model / Strategy</SortableHeader>
+              <SortableHeader field="name">Model</SortableHeader>
+              <SortableHeader field="provider">Organization</SortableHeader>
               <SortableHeader field="type">Type</SortableHeader>
               <TableHead className="table-header">
                 <div className="flex items-center gap-1">
@@ -178,6 +156,16 @@ export const LeaderboardTable = () => {
                       )}
                     </div>
                   </div>
+                </TableCell>
+                <TableCell>
+                  <a 
+                    href={entry.providerUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline font-medium"
+                  >
+                    {entry.provider}
+                  </a>
                 </TableCell>
                 <TableCell>
                   <TypeBadge type={entry.type} />

@@ -8,13 +8,11 @@ export const TypeBadge = ({ type }: TypeBadgeProps) => {
   const labels: Record<ModelType, string> = {
     standard: 'Standard',
     pit: 'PiT',
-    quant: 'Quant',
   };
 
   const badgeClasses: Record<ModelType, string> = {
     standard: 'badge-standard',
     pit: 'badge-pit',
-    quant: 'badge-quant',
   };
 
   return (
