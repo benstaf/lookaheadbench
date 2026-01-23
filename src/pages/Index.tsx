@@ -9,7 +9,6 @@ const Index = () => {
   const sortedData = getSortedByAlphaDecay();
   const best = sortedData[0];
   const worst = sortedData[sortedData.length - 1];
-  const aiModels = sortedData.filter(d => d.type !== 'quant');
 
   return (
     <div className="min-h-screen bg-background">
@@ -48,8 +47,8 @@ const Index = () => {
             variant="negative"
           />
           <StatsCard 
-            title="AI Models Tested"
-            value={aiModels.length.toString()}
+            title="LLMs Tested"
+            value={sortedData.length.toString()}
             subtitle="Standard + PiT"
             icon={<Zap className="w-5 h-5 text-primary" />}
           />
