@@ -1,7 +1,7 @@
 
 # Look-Ahead-Bench
 
-**A standardized benchmark for detecting look-ahead bias in Point-in-Time (PiT) Large Language Models for finance**
+**A standardized benchmark for detecting look-ahead bias in Large Language Models for finance**
 
 
 ---
@@ -74,7 +74,7 @@ These extensions help test whether observed behavior generalizes beyond highly v
 
 ### 2. Add New Trading Agents or Frameworks
 
-Look-Ahead-Bench currently relies on the AI Hedge Fund framework. The benchmark would benefit greatly from the integration of additional agentic systems, including (but not limited to):
+Look-Ahead-Bench currently relies on the [AI Hedge Fund framework](https://github.com/benstaf/aihedgefund_lookaheadbench/blob/main/README.md). The benchmark would benefit greatly from the integration of additional agentic systems, including (but not limited to):
 
 * FinGPT
 * FinMem / FinCon
