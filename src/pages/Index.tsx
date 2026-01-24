@@ -22,7 +22,7 @@ const Index = () => {
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl">
             A standardized benchmark measuring <strong className="text-foreground">lookahead bias</strong> in 
-             LLMs for finance, based on trading performance.
+             LLMs for finance.
           </p>
         </div>
 
