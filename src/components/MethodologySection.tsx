@@ -1,8 +1,9 @@
-import { Calendar, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Calendar, TrendingUp } from 'lucide-react';
+// Removed unused AlertTriangle import
 
 export const MethodologySection = () => {
   return (
-    <section className="mt-12 grid md:grid-cols-3 gap-6">
+    <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="bg-card rounded-xl p-6 border border-border">
         <div className="flex items-center gap-3 mb-4">
           <div className="p-2 bg-primary/10 rounded-lg">
@@ -12,14 +13,14 @@ export const MethodologySection = () => {
         </div>
         <div className="space-y-3 text-sm text-muted-foreground">
           <div>
-            <span className="text-foreground font-medium">P1 (In-Sample)</span> 
+            <span className="text-foreground font-medium">P1 (In-Sample)</span>
             <br />
-  
+            {/* Add description here, e.g.: Period overlapping with potential training data timeframe */}
           </div>
           <div>
-            <span className="text-foreground font-medium">P2 (Out-of-Sample)</span> 
+            <span className="text-foreground font-medium">P2 (Out-of-Sample)</span>
             <br />
-    
+            {/* Add description here, e.g.: Future period after training data cutoff */}
           </div>
         </div>
       </div>
@@ -43,8 +44,6 @@ export const MethodologySection = () => {
           </p>
         </div>
       </div>
-
-      
     </section>
   );
 };
