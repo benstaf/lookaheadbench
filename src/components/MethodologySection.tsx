@@ -12,14 +12,14 @@ export const MethodologySection = () => {
         </div>
         <div className="space-y-3 text-sm text-muted-foreground">
           <div>
-            <span className="text-foreground font-medium">P1 (In-Sample):</span> Apr–Sep 2021
+            <span className="text-foreground font-medium">P1 (In-Sample)</span> 
             <br />
-            <span className="text-xs">Buy & Hold: +25.32%</span>
+  
           </div>
           <div>
-            <span className="text-foreground font-medium">P2 (Out-of-Sample):</span> Jul–Dec 2024
+            <span className="text-foreground font-medium">P2 (Out-of-Sample)</span> 
             <br />
-            <span className="text-xs">Buy & Hold: +24.75%</span>
+    
           </div>
         </div>
       </div>
@@ -44,22 +44,7 @@ export const MethodologySection = () => {
         </div>
       </div>
 
-      <div className="bg-card rounded-xl p-6 border border-border">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 bg-primary/10 rounded-lg">
-            <AlertTriangle className="w-5 h-5 text-primary" />
-          </div>
-          <h3 className="font-semibold">The Scaling Paradox</h3>
-        </div>
-        <div className="space-y-2 text-sm text-muted-foreground">
-          <p>
-            <span className="text-negative font-medium">Standard models:</span> Larger = worse decay (stronger false priors)
-          </p>
-          <p>
-            <span className="text-positive font-medium">PiT models:</span> Larger = better performance (cleaner reasoning)
-          </p>
-        </div>
-      </div>
+      
     </section>
   );
 };
