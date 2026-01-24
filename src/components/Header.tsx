@@ -17,14 +17,14 @@ export const Header = () => {
           
           <nav className="flex items-center gap-4">
             <a 
-              href="#" 
+              href="https://arxiv.org/abs/2601.13770" 
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <FileText className="w-4 h-4" />
               Paper
             </a>
             <a 
-              href="https://arxiv.org/abs/2601.13770" 
+              href="https://github.com/benstaf/lookaheadbench" 
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github className="w-4 h-4" />
@@ -36,7 +36,7 @@ export const Header = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-1.5 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
             >
-              PiT-Inference
+              Contribute
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </nav>
