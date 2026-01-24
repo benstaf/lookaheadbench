@@ -24,14 +24,14 @@ export const Header = () => {
               Paper
             </a>
             <a 
-              href="#" 
+              href="https://arxiv.org/abs/2601.13770" 
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github className="w-4 h-4" />
               GitHub
             </a>
             <a 
-              href="https://pitinference.com" 
+              href="https://github.com/benstaf/lookaheadbench" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-1.5 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
