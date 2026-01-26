@@ -25,7 +25,7 @@ Look-Ahead-Bench provides a practical way to detect this issue before real capit
 ## Benchmark at a Glance
 
 - **Evaluation style:** End-to-end agentic trading
-- **Framework:** AI Hedge Fund (multi-agent LLM system)
+- **Framework:** [AI Hedge Fund](https://github.com/benstaf/aihedgefund_lookaheadbench) (multi-agent LLM system)
 - **Metric:** Alpha and **Alpha Decay**
 - **Assets:** AAPL, MSFT, GOOGL, NVDA, TSLA
 - **Periods:**  
