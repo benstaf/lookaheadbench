@@ -3,6 +3,7 @@
 
 **A standardized benchmark for detecting look-ahead bias in Large Language Models for finance**
 
+[![](https://dcbadge.limes.pink/api/server/ekrySuRBf4)](https://discord.gg/ekrySuRBf4)
 
 ---
 
